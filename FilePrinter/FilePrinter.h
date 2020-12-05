@@ -2,20 +2,29 @@
 	#define STREAM 0
 	#include <fstream>
 #endif
+#ifndef AXES
+	#define AXES 0
+	#include "../Axis/Axis.h"
+#endif
 using namespace std;
 
 class Printer{
-	typedef struct {
-		int x_min=0,x_max=10,x_step=1,y_min=0,y_max=10,y_step=1;
-	} axes;
+	
 	private:
 		fstream file;
+		Axis ax;
+		
 		int width, height;
 		int *buffer;
-		axes ax;
-		void translator(double **list_orig,double **list,int width);
+		char *name;
+		
+		void translator();
+		bool axis_x(int i);
+		bool axis_y(int j);
+		
+		
 	public:
-		Printer(char *file,int width=11,int height=11);
+		Printer(char *file,Axis ax);
 		~Printer();
 		void print_base();
 		void print_function(double **list);
