@@ -18,11 +18,6 @@ class Printer{
 		int *buffer;
 		char *name;
 		
-		void translator();
-		bool axis_x(int i);
-		bool axis_y(int j);
-		
-		
 	public:
 		Printer(char *file,Axis ax);
 		~Printer();
