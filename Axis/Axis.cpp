@@ -1,6 +1,6 @@
 #include <cmath>
 #include "Axis.h"
-#include <iostream>
+
 Axis::Axis(double x_min, double x_max, double x_step,
 		   double y_min, double y_max, double y_step)
 		   :x_min(x_min),x_max(x_max),x_step(x_step),
@@ -66,7 +66,6 @@ bool Axis::step_on_y(int j){
 }
 
 int Axis::translator(double x,double y){
-	std::cout<<x<<", "<<y<<"\n";
 	int w=width(),h=height();
 	int i=round((y_max-y)/y_step);
 	int j=round((x-x_min)/x_step);

@@ -3,14 +3,14 @@
 	#define AXES 0
 	#include "Axis/Axis.h"
 #endif
-#define _USE_MATH_DEFINES
 #include "FilePrinter/FilePrinter.h"
-#include <cmath>
+#include "Parser/Parser.h"
+
+using namespace std;
 int main(int argc,char **argv){
-	//TODO Arg parser object or function or WE
-	char file_name[]="function";
-	Axis ax(-10,10,0.1,-10,10,0.1);
-	Axis theta('a',0,2*M_PI,M_PI/100);
+	Axis ax,theta;
+	char file_name[100]="hola";
+	
 	Printer pr(file_name,ax,theta);
 	pr.print_function();
 	cout << "Hello World!\n";
