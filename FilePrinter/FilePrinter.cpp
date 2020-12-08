@@ -1,11 +1,9 @@
 #include "FilePrinter.h"
 #include <cstring>
-#include <iostream>
 
-using namespace std;
 Printer::Printer(char *file,Axis ax){
 	name=new char[strlen(file)];strcpy(name,file);
-	this->file.open(name,ios::out|ios::trunc);
+	this->file.open(name,std::ios::out|std::ios::trunc);
 	//For portability issues we are not going to use a file for anything else than
 	//a function. Windows doesnt have a way to know the position of a character in
 	//a file that doesnt involve too much fuzz
@@ -16,7 +14,7 @@ Printer::Printer(char *file,Axis ax){
 }
 Printer::Printer(char *file,Axis ax, Axis theta){
 	name=new char[strlen(file)];strcpy(name,file);
-	this->file.open(name,ios::out|ios::trunc);
+	this->file.open(name,std::ios::out|std::ios::trunc);
 	this->ax=ax;
 	this->theta_ax=theta;
 	print_base();
@@ -54,7 +52,7 @@ void Printer::print_function(){
 	//axes object
 	Function funct;
 	funct.eval(ax,theta_ax);
-	std::cout<<theta_ax.get_x_step()<<";"<<ax.get_x_max()<<";"<<funct.length<<"length\n";
+	
 	for(int i=0;i<funct.length;i++){
 		file.seekp(ax.translator(funct.pointlist[i][0],funct.pointlist[i][1]));
 		file<<"x";

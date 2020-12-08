@@ -10,12 +10,11 @@
 	#define FUNCTIONS
 	#include "../Function/Function.h"
 #endif
-using namespace std;
 
 class Printer{
 	
 	private:
-		fstream file;
+		std::fstream file;
 		Axis ax,theta_ax;
 		
 		int width, height;
