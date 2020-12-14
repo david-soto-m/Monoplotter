@@ -27,6 +27,9 @@ void Axis::set_y_min(double y){y_min=y;}
 void Axis::set_y_max(double y){y_max=y;}
 void Axis::set_y_step(double y){y_step=y;validate_y();}
 
+int Axis::width(){return (x_max-x_min)/x_step+1;}
+int Axis::height(){return (y_max-y_min)/y_step+1;}
+
 void Axis::validate_x(){
 	if (x_min>x_max){
 		double aux=x_max;
@@ -55,8 +58,6 @@ void Axis::validate_y(){
 }
 void Axis::validate(){validate_x();validate_y();}
 
-int Axis::width(){return (x_max-x_min)/x_step+1;}
-int Axis::height(){return (y_max-y_min)/y_step+1;}
 
 bool Axis::step_on_x(int i){
 	return (y_max-(i-1)*y_step>0 && y_max-(i+1)*y_step<0)?true:false;
