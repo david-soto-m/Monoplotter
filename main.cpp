@@ -9,8 +9,8 @@
 using namespace std;
 int main(int argc,char **argv){
 	Axis ax,theta;
-	char file_name[100]="hola";
-	
+	char file_name[100];
+	Parse(argc,argv,ax,theta,file_name);
 	Printer pr(file_name,ax,theta);
 	pr.print_function();
 	cout << "Hello World!\n";

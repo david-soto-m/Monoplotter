@@ -1,6 +1,7 @@
 class Axis{
 	private:
 		double x_min,x_max,x_step,y_min,y_max,y_step;
+		char discr;
 		//Double to have precision to spare
 	public:
 		Axis(double x_min=-10, double x_max=10, double x_step=1,
