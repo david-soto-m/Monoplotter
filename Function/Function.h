@@ -11,9 +11,8 @@ class PureFunct{
 		int length;
 		void space_x(Axis ax);
 		void space_y(Axis ax);
-		void space_theta(Axis ax);
+		void space_xy(Axis ax);
 		void polar_to_cartesian();
-// 		void eval(Axis ax,Axis theta);
 };
 class Function:public PureFunct{
 	public:
